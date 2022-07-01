@@ -68,3 +68,24 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+
+#### My
+npx  create-react-app costs
+cd .\costs\
+npm install json-server react-icons react-router-dom uuid
+npm start
+ajustar app.js >> 
+ajustar index.js
+ajustar index.css
+ajustar index.html adicional google fonts
+criar img e adiconar imagens
+em index.html alterar o flavicon
+-- ajustar package json liberando url de backend json server e rodar comando abaixo em um novo terminal
+npm run backend
+
+-- Download de videos
+https://en.savefrom.net/1-youtube-video-downloader-134/
+
+
