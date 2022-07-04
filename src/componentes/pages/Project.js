@@ -1,4 +1,4 @@
-import { parse, v4 as uuidv4 } from 'uuid'
+import { v4 as uuidv4 } from 'uuid'
 
 import { useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
@@ -7,10 +7,10 @@ import styles from './Project.module.css'
 
 import Loading from '../elements/Loading'
 import Container from '../layout/Container'
-import ProjectForm from '../pages/ProjectForm'
+import ProjectForm from './ProjectForm'
 import Message from '../elements/Message'
-import ServiceForm from '../service/ServiceForm'
-import ServiceCard from '../service/ServiceCard'
+import ServiceForm from '../services/ServiceForm'
+import ServiceCard from '../services/ServiceCard'
 
 function Project() {
   let { id } = useParams()

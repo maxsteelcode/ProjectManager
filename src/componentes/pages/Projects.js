@@ -12,11 +12,18 @@ function Projects() {
     const [projects, setProjects] = useState([])
     const [removeLoading, setRemoveLoading] = useState(false)
     const [projectMessage, setProjectMessage] = useState('')
+    const [erroAPI, setErroApi] = useState(false)
     const location = useLocation()
     let message = ''
 
     if (location.state) {
         message = location.state.message
+    }
+
+    function ErroApi(erro) {
+        console.log(erro)
+        setRemoveLoading(true)
+        setErroApi(true)
     }
 
     function removeProject(id) {
@@ -45,7 +52,9 @@ function Projects() {
             .then((data) => {
                 setProjects(data)
                 setRemoveLoading(true)
-            }).catch((err) => console.log(err))
+            }).catch((err) =>                
+                ErroApi(err)            
+            )
 
     }, [])
 
@@ -72,9 +81,14 @@ function Projects() {
 
                 {!removeLoading && <Loading />}
 
-                {removeLoading && projects.length === 0 && (
+                {removeLoading && projects.length === 0 && !erroAPI && (
                     <p>Não há projetos cadastrados!</p>
                 )}
+
+                {erroAPI && projects.length === 0 && (
+                    <p>Não foi possível recuperar os projetos. Tente novamente mais tarde. </p>                                           
+                )}
+
             </Container>
         </div>
     )
